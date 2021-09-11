@@ -7,6 +7,7 @@ body {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -14,6 +15,10 @@ body {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+
+    @media (max-width: 768px){
+        width: 100%;
+    }
 }
 
 ul {
@@ -30,7 +35,72 @@ a {
 
 header {
     .header-desktop{
-        
+        @media (max-width: 768px){
+            display: none;
+        }
+    }
+    .header-mobile{
+        display: none;
+        padding: 10px 20px;
+        @media (max-width: 768px){
+            display: block;
+        }
+
+        .header-top{
+            margin-bottom: 20px;
+            .container{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 0;
+
+                .cart {
+                    a {
+                        position: relative;
+                        span {
+                            position: absolute;
+                            top: -6px;
+                            right: -8px;
+                            display: block;
+                            width: 14px;
+                            height: 14px;
+                            text-align: center;
+                            line-height: 14px;
+                            background: #f8475f;
+                            color: #fff;
+                            font-size: 10px;
+                            border-radius: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header-bottom{
+            .busca {
+                width: 100%;
+                margin: 0 auto;
+                border-bottom: 1px solid #000;
+                form {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    input {
+                        width: 85%;
+                        border: 0;
+                        color: #333333;
+                        padding-bottom: 5px;
+                    }
+                    button {
+                        border: 0;
+                        background: transparent;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
     .container {
         display: flex;
@@ -38,14 +108,6 @@ header {
         align-items: center;
         justify-content: space-between;
         padding: 20px 0 11px 0;
-        h1 {
-            a {
-                img {
-                    display: block;
-                    width: 135px;
-                }
-            }
-        }
 
         .menu {
             ul {
@@ -132,6 +194,9 @@ header {
 }
 
 .main-banner {
+    @media (max-width: 768px){
+        display: none;
+    }
     li {
         a {
             img {
@@ -178,6 +243,46 @@ header {
     }
 }
 
+.main-banner-mobile{
+    display: none;
+    @media (max-width: 768px){
+        display: block;
+    }
+    li {
+        a {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .slick-next, .slick-prev{
+        display: none !important;
+    }
+    .slick-dots {
+        bottom: 18px;
+        li {
+            width: auto;
+            height: auto;
+            margin: 0 6px;
+            &.slick-active {
+                button {
+                    background: #f8475f;
+                }
+            }
+            button {
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: #bdbdbd;
+                border-radius: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+
 .products {
     h2 {
         font-size: 20px;
@@ -194,6 +299,11 @@ header {
         }
     }
     ul {
+        @media (max-width: 768px){
+            width: 80%;
+            margin: 0 auto;
+        }
+
         .slick-prev {
             z-index: 1000;
             left: -30px;
@@ -282,12 +392,21 @@ header {
         font-weight: 700;
         text-align: center;
         margin-bottom: 10px;
+
+        @media (max-width: 768px){
+            text-align: left;
+            padding-left: 3px;
+        }
     }
     form {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
+
+        @media (max-width: 768px){
+            flex-direction: column;
+        }
         input {
             background: #fff;
             padding: 0 0 0 15px;
@@ -296,6 +415,12 @@ header {
             border: 0;
             color: #585858;
             margin: 0 4px;
+
+            @media (max-width: 768px){
+                width: 98%;
+                margin: 0 0 10px 0;
+                border-radius: 5px;
+            }
         }
         button {
             width: 140px;
@@ -309,6 +434,11 @@ header {
             border: 0;
             padding: 0;
             cursor: pointer;
+
+            @media (max-width: 768px){
+                width: 98%;
+                border-radius: 5px;
+            }
         }
     }
 }
@@ -322,7 +452,14 @@ footer {
         justify-content: space-between;
         align-items: center;
 
+        @media (max-width: 768px){
+            flex-direction: column;
+        }
+
         .location {
+            @media (max-width: 768px){
+                width: 100%;
+            }
             h4 {
                 font-size: 20px;
                 color: #fff;
@@ -348,9 +485,22 @@ footer {
         .contact {
             display: flex;
             flex-direction: column;
+
+            @media (max-width: 768px){
+                width: 100%;
+                padding: 50px 0 30px 0;
+            }
+
             a {
                 display: block;
                 margin: 12.5px 0;
+                svg{
+                    @media (max-width: 768px){
+                        display: block;
+                        width: 198px;
+                        margin: 0 auto;
+                    }
+                }
             }
         }
 
@@ -358,9 +508,25 @@ footer {
             display: flex;
             flex-direction: row;
             align-items: center;
+
+            @media (max-width: 768px){
+                width: 100%;
+            }
+
             a {
                 display: block;
                 margin-left: 25px;
+                @media (max-width: 768px){
+                    margin-left: 0;
+                    width: 50%;
+                }
+                svg{
+                    @media (max-width: 768px){
+                        display: block;
+                        height: 32px;
+                        margin: 0 auto;
+                    }
+                }
             }
         }
     }
