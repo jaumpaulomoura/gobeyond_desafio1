@@ -174,3 +174,96 @@ header{
         }
     }
 }
+
+.products{
+    h2{
+        font-size: 20px;
+        color: #000;
+        font-weight: 900;
+        margin-bottom: 20px;
+        &:after{
+            display: block;
+            content: '';
+            width: 65px;
+            height: 4px;
+            background: #E9BF33;
+            margin-top: 10px;
+        }
+    }
+    ul{
+        .slick-prev{
+            z-index: 1000;
+            left: -30px;
+            &:before{
+                content: '';
+            }
+        }
+        .slick-next{
+            z-index: 1000;
+            right: -30px;
+            &:before{
+                content: '';
+            }
+        }
+        li{
+            width: 216px;
+            float: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            border-radius: 5px;
+            margin: 0 5px 10px 5px;
+            padding-bottom: 10px;
+            box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+            .flag{
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            img{
+                display: block;
+                width: 100%;
+            }
+            h3{
+                display: block;
+                padding: 10px 0 5px 0;
+                text-align: center;
+                font-size: 12px;
+                font-weight: 600;
+            }
+            .ratign{
+                margin-bottom: 5px;
+                svg{
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+            .price{
+                margin-bottom: 10px;
+                span{
+                    display: block;
+                    text-align: center;
+                    &.price_de{
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                    &.price_por{
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                    &.installments{
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                }
+            }
+            .buy{
+                svg{
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
